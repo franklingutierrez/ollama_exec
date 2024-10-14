@@ -1,34 +1,19 @@
 @echo off
 setlocal DisableDelayedExpansion
 
-:: Definir colores
-color 0A
-
-:: Limpiar pantalla
-cls
-
 :: Menú interactivo
 :menu
 cls
 echo =========================================
-echo.
-echo. 
-echo        Script de Control de Ollama
+echo  Script de Control de Ollama
 echo =========================================
-echo.
-:: Cambiar el color del texto
-echo.    Creado por: Franklin Gutierrez
-echo    Contacto: franklin@correo.com
-echo.
-echo =========================================
-echo.
-echo    1. Verificar Python
-echo    2. Verificar Git
-echo    3. Clonar repositorio
-echo    4. Cambiar a la rama 'test'
-echo    5. Instalar dependencias
-echo    6. Ejecutar ollama.py
-echo    7. Salir
+echo 1. Verificar Python
+echo 2. Verificar Git
+echo 3. Clonar repositorio
+echo 4. Cambiar a la rama 'test'
+echo 5. Instalar dependencias
+echo 6. Ejecutar ollama.py
+echo 7. Salir
 echo =========================================
 set /p choice="Elige una opción (1-7): "
 
