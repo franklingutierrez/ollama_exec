@@ -1,29 +1,37 @@
 @echo off
-setlocal
+setlocal DisableDelayedExpansion
 
-:: Información del creador
-set "creator=Franklin Gutierrez"
-set "email=franklin.gutierrez@example.com"
+:: Definir colores
+color 0A
+
+:: Limpiar pantalla
+cls
 
 :: Menú interactivo
 :menu
 cls
-color 0B
 echo =========================================
-echo  Script de Control de Ollama
+echo.
+echo. 
+echo        Script de Control de Ollama
 echo =========================================
-echo Creado por: %creator%
-echo Email: %email%
+echo.
+:: Cambiar el color del texto
+echo.    Creado por: Franklin Gutierrez
+echo    Contacto: franklin@correo.com
+echo.
 echo =========================================
-echo 1. Verificar Python
-echo 2. Verificar Git
-echo 3. Clonar repositorio
-echo 4. Cambiar a la rama 'test'
-echo 5. Instalar dependencias
-echo 6. Ejecutar ollama.py
-echo 7. Salir
+echo.
+echo    1. Verificar Python
+echo    2. Verificar Git
+echo    3. Clonar repositorio
+echo    4. Cambiar a la rama 'test'
+echo    5. Instalar dependencias
+echo    6. Ejecutar ollama.py
+echo    7. Salir
 echo =========================================
-set /p "choice=Franklin, elige una opción (1-7): "
+set /p choice="Elige una opción (1-7): "
+
 if "%choice%"=="1" goto check_python
 if "%choice%"=="2" goto check_git
 if "%choice%"=="3" goto clone_repo
@@ -87,5 +95,4 @@ pause
 goto menu
 
 :end
-echo ¡Gracias por usar el Script de Control de Ollama, Franklin!
 pause
