@@ -5,12 +5,12 @@ setlocal DisableDelayedExpansion
 :menu
 cls
 echo ___________________________________________________________________
-echo
-echo               . : . Por. Ing. Frankliln Gutierrez Arizaca . : .
-echo       ------------ fgutierrezarizaca@gmail.com ------------
+echo          .:. Por. Ing. Frankliln Gutierrez Arizaca .:.
+echo      ------------ fgutierrezarizaca@gmail.com ------------
 echo ___________________________________________________________________
+echo.
 echo =========================================
-echo                     SCRIPT DE CONTROL OLLAMA
+echo   SCRIPT DE CONTROL OLLAMA
 echo =========================================
 echo 1. Verificar Python
 echo 2. Verificar Git
