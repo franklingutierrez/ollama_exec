@@ -14,19 +14,22 @@ if (-not $gitInstalled) {
     exit
 }
 
+# Crear el script CMD
+$cmdScript = @"
+cd C:\ollama_gui2\ollama_gui2-main
+python -m pip install -r requirements.txt
+git checkout test
+python ollama.py
+pause
+"@
+
+# Guardar el script CMD
+$cmdScriptPath = "C:\ollama_gui2\run_script.cmd"
+Set-Content -Path $cmdScriptPath -Value $cmdScript
+
 # Clonar el repositorio correcto
 Invoke-RestMethod -Uri "https://github.com/franklingutierrez/ollama_gui2/archive/refs/heads/main.zip" -OutFile "C:\ollama_gui2.zip"
 Expand-Archive -LiteralPath "C:\ollama_gui2.zip" -DestinationPath "C:\ollama_gui2"
-Set-Location "C:\ollama_gui2\ollama_gui2-main"
 
-# Instalar las dependencias
-python -m pip install -r requirements.txt
-
-# Cambiar a la rama 'test'
-git checkout test
-
-# Ejecutar ollama.py
-python ollama.py
-
-# Pausa para mantener la ventana abierta
-Read-Host "Presiona Enter para salir"
+# Ejecutar el script CMD
+Start-Process cmd -ArgumentList "/c $cmdScriptPath"
