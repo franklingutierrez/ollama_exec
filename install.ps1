@@ -14,23 +14,18 @@ if (-not $gitInstalled) {
     exit
 }
 
-# Clonar el repositorio correcto
-Invoke-RestMethod -Uri "https://github.com/franklingutierrez/ollama_gui2/archive/refs/heads/main.zip" -OutFile "C:\ollama_gui2.zip"
-Expand-Archive -LiteralPath "C:\ollama_gui2.zip" -DestinationPath "C:\ollama_gui2"
-Write-Host "Repositorio clonado exitosamente"
-Read-Host "Presiona Enter para continuar"
-
 # Crear el script CMD
 $cmdScript = @"
-cd C:\ollama_gui2\ollama_gui2-main
+cd C:\
+git clone --branch test https://github.com/franklingutierrez/ollama_gui2.git
+cd ollama_gui2
 python -m pip install -r requirements.txt
-git checkout test
 python ollama.py
 pause
 "@
 
 # Guardar el script CMD
-$cmdScriptPath = "C:\ollama_gui2\run_script.cmd"
+$cmdScriptPath = "C:\run_script.cmd"
 Set-Content -Path $cmdScriptPath -Value $cmdScript
 
 # Ejecutar el script CMD
