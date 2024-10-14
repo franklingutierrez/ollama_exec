@@ -2,9 +2,7 @@
 setlocal EnableDelayedExpansion
 
 :: Definir colores
-set "color_title=0A"
-set "color_option=0B"
-set "color_input=0F"
+color 0A
 
 :: Limpiar pantalla
 cls
@@ -13,25 +11,23 @@ cls
 :menu
 cls
 echo =========================================
+echo.
 echo. 
-echo. 
-echo. 
-echo     %color_title%Script de Control de Ollama%color_title%
-echo. 
+echo        Script de Control de Ollama
 echo =========================================
 echo. 
 echo    Creado por: Franklin Gutierrez
 echo    Contacto: franklin@correo.com
-echo. 
-echo. 
+echo.
 echo =========================================
-echo    %color_option%1.%color_input% Verificar Python
-echo    %color_option%2.%color_input% Verificar Git
-echo    %color_option%3.%color_input% Clonar repositorio
-echo    %color_option%4.%color_input% Cambiar a la rama 'test'
-echo    %color_option%5.%color_input% Instalar dependencias
-echo    %color_option%6.%color_input% Ejecutar ollama.py
-echo    %color_option%7.%color_input% Salir
+echo.
+echo    1. Verificar Python
+echo    2. Verificar Git
+echo    3. Clonar repositorio
+echo    4. Cambiar a la rama 'test'
+echo    5. Instalar dependencias
+echo    6. Ejecutar ollama.py
+echo    7. Salir
 echo =========================================
 set /p choice="Elige una opción (1-7): "
 
