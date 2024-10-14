@@ -12,7 +12,7 @@ if (-not $gitInstalled) {
     exit
 }
 
-# Clonar el repositorio
+# Clonar el repositorio correcto
 Invoke-RestMethod -Uri "https://github.com/franklingutierrez/ollama_gui2/archive/refs/heads/main.zip" -OutFile "C:\ollama_gui2.zip"
 Expand-Archive -LiteralPath "C:\ollama_gui2.zip" -DestinationPath "C:\ollama_gui2"
 Set-Location "C:\ollama_gui2\ollama_gui2-main"
